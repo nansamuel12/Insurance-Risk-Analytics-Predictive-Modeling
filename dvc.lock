@@ -5,30 +5,47 @@ stages:
     deps:
     - path: data/raw/data.csv
       hash: md5
-      md5: 2c3cf1813f530ee9bd0cd5ef9c248456
-      size: 50
+      md5: 821003aedbc5aa00876c834e1175a954
+      size: 864
     - path: src/process_data.py
       hash: md5
-      md5: 411f554e5cf384e0aee7bacb71fda7f7
-      size: 378
+      md5: 056e12cd4c3d2ba0a1b0143cccd6ab5e
+      size: 407
     outs:
     - path: data/processed/processed_data.csv
       hash: md5
-      md5: b942fb244d3ecd953f08778c39dd131d
-      size: 50
+      md5: 13153d50079696a443946501e47fe257
+      size: 867
   train_model:
     cmd: python src/train_model.py
     deps:
     - path: data/processed/processed_data.csv
       hash: md5
-      md5: b942fb244d3ecd953f08778c39dd131d
-      size: 50
+      md5: 13153d50079696a443946501e47fe257
+      size: 867
     - path: src/train_model.py
       hash: md5
-      md5: c2d732a134f09169275a632518d29e6c
-      size: 447
+      md5: 7bf51ab43e158a3422cdff0d2229a5bf
+      size: 453
     outs:
     - path: metrics.json
       hash: md5
-      md5: 8345eeed27c838b2370863e373a8be2a
-      size: 52
+      md5: 7dbd38a38cc5fa5b4cc0ad7a15ef29d0
+      size: 74
+  eda:
+    cmd: python src/eda.py
+    deps:
+    - path: data/raw/data.csv
+      hash: md5
+      md5: 821003aedbc5aa00876c834e1175a954
+      size: 864
+    - path: src/eda.py
+      hash: md5
+      md5: 1549f110cfb0b0696e9cec9dd0280791
+      size: 1476
+    outs:
+    - path: reports/figures
+      hash: md5
+      md5: db96615bead7c9a378f274979beac3d5.dir
+      size: 98303
+      nfiles: 4

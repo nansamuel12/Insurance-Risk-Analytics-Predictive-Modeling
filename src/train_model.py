@@ -5,9 +5,9 @@ import os
 # Read processed data
 df = pd.read_csv("data/processed/processed_data.csv")
 
-# Simple "training" / analysis: Calculate mean and std value
-mean_val = df['value'].mean()
-std_val = df['value'].std()
+# Simple "training" / analysis: Calculate mean and std charges
+mean_val = df['charges'].mean()
+std_val = df['charges'].std()
 
 # Save metrics
 metrics = {

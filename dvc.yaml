@@ -1,4 +1,12 @@
 stages:
+  eda:
+    cmd: python src/eda.py
+    deps:
+      - data/raw/data.csv
+      - src/eda.py
+    outs:
+      - reports/figures
+
   process_data:
     cmd: python src/process_data.py
     deps:
