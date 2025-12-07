@@ -5,7 +5,7 @@ import os
 os.makedirs("data/processed", exist_ok=True)
 
 # Read data
-df = pd.read_csv("data.csv")
+df = pd.read_csv("data/raw/data.csv")
 
 # Process data: Double the value
 df['value'] = df['value'] * 2

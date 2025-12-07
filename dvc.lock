@@ -3,14 +3,14 @@ stages:
   process_data:
     cmd: python src/process_data.py
     deps:
-    - path: data.csv
+    - path: data/raw/data.csv
       hash: md5
       md5: 2c3cf1813f530ee9bd0cd5ef9c248456
       size: 50
     - path: src/process_data.py
       hash: md5
-      md5: b997a53ca39e63941e8c77c203b30d97
-      size: 369
+      md5: 411f554e5cf384e0aee7bacb71fda7f7
+      size: 378
     outs:
     - path: data/processed/processed_data.csv
       hash: md5
