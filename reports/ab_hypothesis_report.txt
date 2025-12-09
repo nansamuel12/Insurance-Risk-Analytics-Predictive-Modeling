@@ -1,0 +1,118 @@
+================================================================================
+A/B HYPOTHESIS TESTING REPORT
+Insurance Risk Analytics - Statistical Analysis
+================================================================================
+
+Significance Level (alpha): 0.05
+Total Tests Conducted: 7
+Significant Results: 1
+Non-Significant Results: 6
+
+================================================================================
+DETAILED TEST RESULTS
+================================================================================
+
+Test #1: Chi-Square Test of Independence
+--------------------------------------------------------------------------------
+Variable: smoker vs sex
+Groups: smoker vs sex
+Test Statistic: 0.000000
+P-value: 1.000000
+Significant: NO
+Effect Size: 0.000000
+
+Interpretation:
+Chi-Square test between smoker and sex: chi-square=0.0000, p-value=1.0000. FAIL TO REJECT null hypothesis. Variables are INDEPENDENT at alpha=0.05. Effect size (Cramer's V)=0.0000.
+
+================================================================================
+
+Test #2: Chi-Square Test of Independence
+--------------------------------------------------------------------------------
+Variable: smoker vs region
+Groups: smoker vs region
+Test Statistic: 3.571429
+P-value: 0.311616
+Significant: NO
+Effect Size: 0.422577
+
+Interpretation:
+Chi-Square test between smoker and region: chi-square=3.5714, p-value=0.3116. FAIL TO REJECT null hypothesis. Variables are INDEPENDENT at alpha=0.05. Effect size (Cramer's V)=0.4226.
+
+================================================================================
+
+Test #3: Independent Samples T-Test
+--------------------------------------------------------------------------------
+Variable: charges
+Groups: smoker=yes vs smoker=no
+Test Statistic: 4.886591
+P-value: 0.000119
+Significant: YES
+Effect Size: 2.731687
+Group A Mean: 30285.72 +/- 10256.98
+Group B Mean: 7994.10 +/- 7672.62
+
+Interpretation:
+Independent t-test for charges between yes and no: t=4.8866, p-value=0.0001. Mean(yes)=30285.72+/-10256.98, Mean(no)=7994.10+/-7672.62. REJECT null hypothesis. Means are SIGNIFICANTLY DIFFERENT at alpha=0.05. Effect size (Cohen's d)=2.7317.
+
+================================================================================
+
+Test #4: Independent Samples T-Test
+--------------------------------------------------------------------------------
+Variable: charges
+Groups: sex=female vs sex=male
+Test Statistic: 0.560905
+P-value: 0.581778
+Significant: NO
+Effect Size: 0.256017
+Group A Mean: 14347.94 +/- 9431.65
+Group B Mean: 11188.74 +/- 13876.69
+
+Interpretation:
+Independent t-test for charges between female and male: t=0.5609, p-value=0.5818. Mean(female)=14347.94+/-9431.65, Mean(male)=11188.74+/-13876.69. FAIL TO REJECT null hypothesis. Means are NOT SIGNIFICANTLY DIFFERENT at alpha=0.05. Effect size (Cohen's d)=0.2560.
+
+================================================================================
+
+Test #5: Independent Samples T-Test
+--------------------------------------------------------------------------------
+Variable: bmi
+Groups: smoker=yes vs smoker=no
+Test Statistic: 0.887260
+P-value: 0.386641
+Significant: NO
+Effect Size: 0.495994
+Group A Mean: 32.91 +/- 7.29
+Group B Mean: 30.06 +/- 5.38
+
+Interpretation:
+Independent t-test for bmi between yes and no: t=0.8873, p-value=0.3866. Mean(yes)=32.91+/-7.29, Mean(no)=30.06+/-5.38. FAIL TO REJECT null hypothesis. Means are NOT SIGNIFICANTLY DIFFERENT at alpha=0.05. Effect size (Cohen's d)=0.4960.
+
+================================================================================
+
+Test #6: One-Way ANOVA
+--------------------------------------------------------------------------------
+Variable: charges
+Groups: region vs all_groups
+Test Statistic: 0.515756
+P-value: 0.677297
+Significant: NO
+Effect Size: 0.088177
+
+Interpretation:
+One-way ANOVA for charges across region: F=0.5158, p-value=0.6773. Group means: {'southwest': np.float64(13597.7712), 'southeast': np.float64(13811.918014285713), 'northwest': np.float64(15513.9920825), 'northeast': np.float64(5580.0598125)}. FAIL TO REJECT null hypothesis. At least one group mean is NOT SIGNIFICANTLY DIFFERENT at alpha=0.05. Effect size (eta-squared)=0.0882.
+
+================================================================================
+
+Test #7: One-Way ANOVA
+--------------------------------------------------------------------------------
+Variable: bmi
+Groups: region vs all_groups
+Test Statistic: 2.249123
+P-value: 0.121962
+Significant: NO
+Effect Size: 0.296622
+
+Interpretation:
+One-way ANOVA for bmi across region: F=2.2491, p-value=0.1220. Group means: {'southwest': np.float64(32.5), 'southeast': np.float64(33.455714285714286), 'northwest': np.float64(26.291249999999998), 'northeast': np.float64(27.66875)}. FAIL TO REJECT null hypothesis. At least one group mean is NOT SIGNIFICANTLY DIFFERENT at alpha=0.05. Effect size (eta-squared)=0.2966.
+
+================================================================================
+

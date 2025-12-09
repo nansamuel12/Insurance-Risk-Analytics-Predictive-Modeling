@@ -7,6 +7,24 @@ stages:
     outs:
       - reports/figures
 
+  ab_hypothesis_testing:
+    cmd: python src/ab_hypothesis_testing.py
+    deps:
+      - data/raw/data.csv
+      - src/ab_hypothesis_testing.py
+    outs:
+      - reports/ab_hypothesis_tests.json
+      - reports/ab_hypothesis_report.txt
+
+  statistical_modeling:
+    cmd: python src/statistical_modeling.py
+    deps:
+      - data/raw/data.csv
+      - src/statistical_modeling.py
+    outs:
+      - reports/statistical_modeling_results.json
+      - reports/statistical_modeling_report.txt
+
   process_data:
     cmd: python src/process_data.py
     deps:

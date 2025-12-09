@@ -1,0 +1,129 @@
+================================================================================
+STATISTICAL MODELING REPORT
+Insurance Risk Analytics - Predictive Modeling
+================================================================================
+
+Target Variable: charges
+Training Samples: 16
+Test Samples: 4
+Features: age, sex, bmi, children, smoker, region
+
+================================================================================
+MODEL COMPARISON
+================================================================================
+
+            Model  Train R²   Test R²  Train RMSE   Test RMSE   Train MAE    Test MAE  Test MAPE (%)
+Linear Regression  0.720732 -0.092914 6465.237948 6749.698738 4964.672814 5664.384395     154.241520
+ Lasso Regression  0.720002 -0.176067 6473.684830 7001.762274 4976.169143 5919.936313     161.893842
+ Ridge Regression  0.613506 -0.254470 7605.808803 7231.384148 6185.599725 7220.290398     283.063094
+    Random Forest  0.902813 -0.748767 3813.985428 8538.023915 2618.910674 7625.621424     273.260715
+Gradient Boosting  1.000000 -0.797655    0.100072 8656.545174    0.085083 6222.954278     142.716265
+
+================================================================================
+BEST MODEL
+================================================================================
+
+Model: Linear Regression
+Test R² Score: -0.0929
+Test RMSE: $6749.70
+Test MAE: $5664.38
+Test MAPE: 154.24%
+
+Interpretation:
+The Linear Regression model explains -9.29% of the variance in insurance charges.
+On average, predictions are off by $5664.38 (154.24%).
+
+================================================================================
+DETAILED MODEL RESULTS
+================================================================================
+
+Model: Linear Regression
+--------------------------------------------------------------------------------
+Training Performance:
+  R² Score: 0.7207
+  RMSE: $6465.24
+  MAE: $4964.67
+  MAPE: 63.93%
+
+Test Performance:
+  R² Score: -0.0929
+  RMSE: $6749.70
+  MAE: $5664.38
+  MAPE: 154.24%
+
+  Note: Possible overfitting detected (R² difference: 0.8136)
+
+================================================================================
+
+Model: Ridge Regression
+--------------------------------------------------------------------------------
+Training Performance:
+  R² Score: 0.6135
+  RMSE: $7605.81
+  MAE: $6185.60
+  MAPE: 96.46%
+
+Test Performance:
+  R² Score: -0.2545
+  RMSE: $7231.38
+  MAE: $7220.29
+  MAPE: 283.06%
+
+  Note: Possible overfitting detected (R² difference: 0.8680)
+
+================================================================================
+
+Model: Lasso Regression
+--------------------------------------------------------------------------------
+Training Performance:
+  R² Score: 0.7200
+  RMSE: $6473.68
+  MAE: $4976.17
+  MAPE: 64.74%
+
+Test Performance:
+  R² Score: -0.1761
+  RMSE: $7001.76
+  MAE: $5919.94
+  MAPE: 161.89%
+
+  Note: Possible overfitting detected (R² difference: 0.8961)
+
+================================================================================
+
+Model: Random Forest
+--------------------------------------------------------------------------------
+Training Performance:
+  R² Score: 0.9028
+  RMSE: $3813.99
+  MAE: $2618.91
+  MAPE: 35.92%
+
+Test Performance:
+  R² Score: -0.7488
+  RMSE: $8538.02
+  MAE: $7625.62
+  MAPE: 273.26%
+
+  Note: Possible overfitting detected (R² difference: 1.6516)
+
+================================================================================
+
+Model: Gradient Boosting
+--------------------------------------------------------------------------------
+Training Performance:
+  R² Score: 1.0000
+  RMSE: $0.10
+  MAE: $0.09
+  MAPE: 0.00%
+
+Test Performance:
+  R² Score: -0.7977
+  RMSE: $8656.55
+  MAE: $6222.95
+  MAPE: 142.72%
+
+  Note: Possible overfitting detected (R² difference: 1.7977)
+
+================================================================================
+
